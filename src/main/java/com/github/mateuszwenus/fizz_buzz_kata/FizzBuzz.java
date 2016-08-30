@@ -6,7 +6,8 @@ public class FizzBuzz {
 		if (number <= 0) {
 			throw new IllegalArgumentException("number must be positive");
 		}
-		boolean isFizz = number % 3 == 0 || String.valueOf(number).contains("3");
+		String numberStr = String.valueOf(number);
+		boolean isFizz = number % 3 == 0 || numberStr.contains("3");
 		boolean isBuzz = number % 5 == 0;
 		if (isFizz && isBuzz) {
 			return "FizzBuzz";
@@ -15,6 +16,6 @@ public class FizzBuzz {
 		} else if (isBuzz) {
 			return "Buzz";
 		}
-		return String.valueOf(number);
+		return numberStr;
 	}
 }
