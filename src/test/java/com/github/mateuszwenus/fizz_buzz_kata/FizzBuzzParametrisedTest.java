@@ -31,7 +31,7 @@ public class FizzBuzzParametrisedTest {
 	
 	@Test
 	@Parameters({ "1", "2", "11" })
-	@TestCaseName("FizzBuzz({0}) = {1}")
+	@TestCaseName("FizzBuzz({0}) = {0}")
 	public void shouldPrintNormalNumbers(int number) {
 		// when
 		String result = fizzBuzz.print(number);
@@ -41,52 +41,52 @@ public class FizzBuzzParametrisedTest {
 	
 	@Test
 	@Parameters({ "3", "6", "24" })
-	@TestCaseName("should print Fizz for {0}")
+	@TestCaseName("should print " + FizzBuzz.FIZZ + " for {0}")
 	public void shouldPrintFizzIfNumberIsDivisableByThree(int number) {
 		// when
 		String result = fizzBuzz.print(number);
 		// then
-		assertThat(result, is("Fizz"));
+		assertThat(result, is(FizzBuzz.FIZZ));
 	}
 	
 	@Test
 	@Parameters({ "13", "31", "131" })
-	@TestCaseName("should print Fizz for {0}")
+	@TestCaseName("should print " + FizzBuzz.FIZZ + " for {0}")
 	public void shouldPrintFizzIfNumberHasAThreeInIt(int number) {
 		// when
 		String result = fizzBuzz.print(number);
 		// then
-		assertThat(result, is("Fizz"));
+		assertThat(result, is(FizzBuzz.FIZZ));
 	}
 	
 	@Test
 	@Parameters({ "5", "10", "25" })
-	@TestCaseName("should print Buzz for {0}")
+	@TestCaseName("should print " + FizzBuzz.BUZZ + " for {0}")
 	public void shouldPrintBuzzIfNumberIsDivisableByFive(int number) {
 		// when
 		String result = fizzBuzz.print(number);
 		// then
-		assertThat(result, is("Buzz"));
+		assertThat(result, is(FizzBuzz.BUZZ));
 	}
 	
 	@Test
 	@Parameters({ "52", "59", "151" })
-	@TestCaseName("should print Buzz for {0}")
+	@TestCaseName("should print " + FizzBuzz.BUZZ + " for {0}")
 	public void shouldPrintBuzzIfNumberHasAFiveInIt(int number) {
 		// when
 		String result = fizzBuzz.print(number);
 		// then
-		assertThat(result, is("Buzz"));
+		assertThat(result, is(FizzBuzz.BUZZ));
 	}
 	
 	@Test
 	@Parameters({ "60", "53", "51", "35" })
-	@TestCaseName("should print FizzBuzz for {0}")
+	@TestCaseName("should print " + FizzBuzz.FIZZBUZZ + " for {0}")
 	public void shouldPrintFizzBuzzIfNumberIsBothFizzAndBuzz(int number) {
 		// when
 		String result = fizzBuzz.print(number);
 		// then
-		assertThat(result, is("FizzBuzz"));
+		assertThat(result, is(FizzBuzz.FIZZBUZZ));
 	}
 
 }
