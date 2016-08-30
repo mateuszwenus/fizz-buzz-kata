@@ -38,4 +38,15 @@ public class FizzBuzzParametrisedTest {
 		// then
 		assertThat(result, is(expectedResult));
 	}
+	
+	@Test
+	@Parameters({ "13", "31", "131" })
+	@TestCaseName("should print Fizz for {0}")
+	public void shouldPrintFizzIfNumberHasAThreeInIt(int number) {
+		// given
+		// when
+		String result = fizzBuzz.print(number);
+		// then
+		assertThat(result, is("Fizz"));
+	}
 }
