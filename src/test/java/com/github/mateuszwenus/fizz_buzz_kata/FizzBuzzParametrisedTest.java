@@ -30,7 +30,7 @@ public class FizzBuzzParametrisedTest {
 	}
 	
 	@Test
-	@Parameters({ "1,1", "2,2", "3,Fizz", "6,Fizz", "5,Buzz", "10,Buzz", "15,FizzBuzz" })
+	@Parameters({ "1,1", "2,2", "5,Buzz", "10,Buzz", "15,FizzBuzz" })
 	@TestCaseName("FizzBuzz({0}) = {1}")
 	public void shouldPrintCorrectResult(int number, String expectedResult) {
 		// when
@@ -40,10 +40,19 @@ public class FizzBuzzParametrisedTest {
 	}
 	
 	@Test
+	@Parameters({ "3", "6", "24" })
+	@TestCaseName("should print Fizz for {0}")
+	public void shouldPrintFizzIfNumberIsDivisableByThree(int number) {
+		// when
+		String result = fizzBuzz.print(number);
+		// then
+		assertThat(result, is("Fizz"));
+	}
+	
+	@Test
 	@Parameters({ "13", "31", "131" })
 	@TestCaseName("should print Fizz for {0}")
 	public void shouldPrintFizzIfNumberHasAThreeInIt(int number) {
-		// given
 		// when
 		String result = fizzBuzz.print(number);
 		// then
