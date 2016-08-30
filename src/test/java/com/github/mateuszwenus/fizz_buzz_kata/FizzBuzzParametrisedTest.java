@@ -30,13 +30,13 @@ public class FizzBuzzParametrisedTest {
 	}
 	
 	@Test
-	@Parameters({ "1,1", "2,2", "5,Buzz", "10,Buzz", "15,FizzBuzz" })
+	@Parameters({ "1", "2", "11" })
 	@TestCaseName("FizzBuzz({0}) = {1}")
-	public void shouldPrintCorrectResult(int number, String expectedResult) {
+	public void shouldPrintNormalNumbers(int number) {
 		// when
 		String result = fizzBuzz.print(number);
 		// then
-		assertThat(result, is(expectedResult));
+		assertThat(result, is(String.valueOf(number)));
 	}
 	
 	@Test
@@ -79,6 +79,14 @@ public class FizzBuzzParametrisedTest {
 		assertThat(result, is("Buzz"));
 	}
 	
-	
+	@Test
+	@Parameters({ "60", "53", "51", "35" })
+	@TestCaseName("should print FizzBuzz for {0}")
+	public void shouldPrintFizzBuzzIfNumberIsBothFizzAndBuzz(int number) {
+		// when
+		String result = fizzBuzz.print(number);
+		// then
+		assertThat(result, is("FizzBuzz"));
+	}
 
 }
