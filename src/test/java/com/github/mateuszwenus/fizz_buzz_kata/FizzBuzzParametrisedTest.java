@@ -58,4 +58,27 @@ public class FizzBuzzParametrisedTest {
 		// then
 		assertThat(result, is("Fizz"));
 	}
+	
+	@Test
+	@Parameters({ "5", "10", "25" })
+	@TestCaseName("should print Buzz for {0}")
+	public void shouldPrintBuzzIfNumberIsDivisableByFive(int number) {
+		// when
+		String result = fizzBuzz.print(number);
+		// then
+		assertThat(result, is("Buzz"));
+	}
+	
+	@Test
+	@Parameters({ "52", "59", "151" })
+	@TestCaseName("should print Buzz for {0}")
+	public void shouldPrintBuzzIfNumberHasAFiveInIt(int number) {
+		// when
+		String result = fizzBuzz.print(number);
+		// then
+		assertThat(result, is("Buzz"));
+	}
+	
+	
+
 }
